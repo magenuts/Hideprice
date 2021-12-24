@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="Hideprice" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Hide Price</label>
+            <tab>magenuts</tab>
+            <resource>Magenuts_Hideprice::Magenuts_Hideprice</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <!-- Enable or disable price -->                
+                <label>Hide Price General Setting</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable/Disable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="hide_price_for_guest_user" translate="label" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide Price For Guest User</label>                    
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="user_login_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">           
+                    <label>User Login Text</label>
+                     <comment><![CDATA[
+                       add class "withReferralUrl" <br> Ex. &lt;a href="#" class="withReferralUrl"&gt;login&lt;/a&gt;
+                    ]]></comment>                                       
+                    <depends>
+                        <field id="hide_price_for_guest_user">1</field>
+                    </depends>
+                </field>
+                <field id="where_display_message" translate="label" type="multiselect" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Login Text On</label>
+                    <depends>
+                        <field id="hide_price_for_guest_user">1</field>
+                    </depends>
+                    <source_model>Magenuts\Hideprice\Model\Config\Source\DisplayMessageListPage</source_model>
+                </field>
+                <field id="login_text_css" translate="label" type="textarea" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">            
+                    <label>Login Text Css</label>               
+                    <depends>
+                        <field id="hide_price_for_guest_user">1</field>
+                    </depends>
+                </field>    
+            </group>
+        </section>
+    </system>
+</config>

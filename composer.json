@@ -1,0 +1,26 @@
+{
+    "name": "magenuts/module-Hideprice",
+    "description": "Magento 2 Hideprice Extension by Magenuts IT Solutions Pvt Ltd.",
+    "require": {        
+        "magento/module-store": "1.0.0-beta",
+        "magento/module-catalog": "1.0.0-beta",
+        "magento/module-catalog-inventory": "1.0.0-beta",
+        "magento/module-ui": "self.version",
+        "magento/magento-composer-installer": "*"
+        },
+        "suggest": {
+          "magento/module-webapi": "1.0.0-beta"
+          },
+          "type": "magento2-module",
+          "version": "1.0.0",
+          "license": [
+          "OSL-3.0",
+          "AFL-3.0"
+          ],
+          "autoload": {
+            "files": [ "registration.php" ],
+            "psr-4": {
+                "Magenuts\\Hideprice\\": ""
+            }
+        }
+    }

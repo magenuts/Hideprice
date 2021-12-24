@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Magenuts_Hideprice::Heading" title="Hide Price" module="Magenuts_Hideprice" sortOrder="50" 
+             parent="Magenuts_Core::menu" resource="Magenuts_Hideprice::Heading" />
+        <add id="Magenuts_Hideprice::settings" title="Hide Price Settings"  action="adminhtml/system_config/edit/section/Hideprice" module="Magenuts_Hideprice" 
+             sortOrder="1" parent="Magenuts_Hideprice::Heading"  resource="Magenuts_Hideprice::settings"/>
+    </menu>
+</config>
